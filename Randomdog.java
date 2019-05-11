@@ -1,4 +1,4 @@
-import net.dv8tion.jda.api.EmbedBuilder;
+import net.dv8tion.jda.core.EmbedBuilder;
 import org.json.JSONObject;
 import support.kajstech.kajbot.command.Command;
 import support.kajstech.kajbot.command.CommandEvent;

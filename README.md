@@ -1,2 +1,2 @@
 # custom-commands
-place these in the "commands" folder and rember to set AutoCompile commands to true
+Place these in the "commands" folder and remember to set AutoCompile commands to true

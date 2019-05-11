@@ -23,8 +23,8 @@ public class Randomdog extends Command {
     @Override
     public void execute(CommandEvent e) {
         EmbedBuilder eb = new EmbedBuilder();
-        try (Stream<String> stream = new BufferedReader(new InputStreamReader(new URL("https://dog.ceo/api/breeds/image/random").openStream(), StandardCharsets.UTF_8)).lines()) {
-            eb.setImage(new JSONObject(stream.collect(Collectors.joining(System.lineSeparator()))).getString("message"));
+        try (Stream<String> stream = new BufferedReader(new InputStreamReader(new URL("https://random.dog/woof.json").openStream(), StandardCharsets.UTF_8)).lines()) {
+            eb.setImage(new JSONObject(stream.collect(Collectors.joining(System.lineSeparator()))).getString("url"));
         } catch (IOException ignored) {
         }
 

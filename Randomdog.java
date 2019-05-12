@@ -15,7 +15,7 @@ import java.util.stream.Stream;
 
 public class Randomdog extends Command {
     public Randomdog() {
-        this.name = "randomdog";
+        this.name = "doggo";
         this.guildOnly = false;
         this.requiredRole = ConfigHandler.getProperty("Bot admin role");
     }

@@ -15,7 +15,7 @@ import java.util.stream.Stream;
 
 public class Randomcat extends Command {
     public Randomcat() {
-        this.name = "randomcat";
+        this.name = "catto";
         this.guildOnly = false;
         this.requiredRole = ConfigHandler.getProperty("Bot admin role");
     }

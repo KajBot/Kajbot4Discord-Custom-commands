@@ -4,11 +4,12 @@ import support.kajstech.kajbot.command.Command;
 import support.kajstech.kajbot.command.CommandEvent;
 import support.kajstech.kajbot.handlers.ConfigHandler;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -22,13 +23,14 @@ public class Randomdog extends Command {
 
     @Override
     public void execute(CommandEvent e) {
-        EmbedBuilder eb = new EmbedBuilder();
         try (Stream<String> stream = new BufferedReader(new InputStreamReader(new URL("https://random.dog/woof.json").openStream(), StandardCharsets.UTF_8)).lines()) {
-            eb.setImage(new JSONObject(stream.collect(Collectors.joining(System.lineSeparator()))).getString("url"));
+            URL url = new URL(new JSONObject(stream.collect(Collectors.joining(System.lineSeparator()))).getString("url"));
+
+            InputStream in = url.openStream();
+            Files.copy(in, Paths.get(System.getProperty("user.dir") + "/doggo" + (url.toString().substring(url.toString().length() - 4))), StandardCopyOption.REPLACE_EXISTING);
+            e.getChannel().sendFile(new File(System.getProperty("user.dir") + "/doggo" + url.toString().substring(url.toString().length() - 4))).queue();
         } catch (IOException ignored) {
         }
-
-        e.reply(eb.build());
     }
 
 }

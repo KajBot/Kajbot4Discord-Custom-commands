@@ -30,8 +30,8 @@ public class Randomdog extends Command {
                 return;
             }
             InputStream in = url.openStream();
-            Files.copy(in, Paths.get(System.getProperty("user.dir") + "/doggo" + name.substring(lastIndexOf)), StandardCopyOption.REPLACE_EXISTING);
-            e.getChannel().sendFile(new File(System.getProperty("user.dir") + "/doggo" + name.substring(lastIndexOf))).queue();
+            Files.copy(in, Paths.get(System.getProperty("user.dir") + "/doggo" + url.toString().substring(lastIndexOf)), StandardCopyOption.REPLACE_EXISTING);
+            e.getChannel().sendFile(new File(System.getProperty("user.dir") + "/doggo" + url.toString().substring(lastIndexOf))).queue();
         } catch (IOException ignored) {
         }
     }

@@ -29,8 +29,8 @@ public class Randomcat extends Command {
                 return;
             }
             InputStream in = url.openStream();
-            Files.copy(in, Paths.get(System.getProperty("user.dir") + "/catto" + name.substring(lastIndexOf)), StandardCopyOption.REPLACE_EXISTING);
-            e.getChannel().sendFile(new File(System.getProperty("user.dir") + "/catto" + name.substring(lastIndexOf))).queue();
+            Files.copy(in, Paths.get(System.getProperty("user.dir") + "/catto" + url.toString().substring(lastIndexOf)), StandardCopyOption.REPLACE_EXISTING);
+            e.getChannel().sendFile(new File(System.getProperty("user.dir") + "/catto" + url.toString().substring(lastIndexOf))).queue();
         } catch (IOException ignored) {
         }
     }

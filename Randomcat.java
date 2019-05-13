@@ -16,6 +16,7 @@ public class Randomcat extends Command {
     public Randomcat() {
         this.name = "catto";
         this.guildOnly = false;
+        this.requiredRole = ConfigHandler.getProperty("Bot admin role");
     }
 
 
@@ -29,7 +30,12 @@ public class Randomcat extends Command {
             }
             InputStream in = url.openStream();
             Files.copy(in, Paths.get(System.getProperty("user.dir") + "/catto" + url.toString().substring(lastIndexOf)), StandardCopyOption.REPLACE_EXISTING);
-            e.getChannel().sendFile(new File(System.getProperty("user.dir") + "/catto" + url.toString().substring(lastIndexOf))).queue();
+            File file = new File(System.getProperty("user.dir") + "/catto" + url.toString().substring(lastIndexOf));
+            if (((double) file.length() / (1024 * 1024)) > 7.99) {
+                execute(e);
+                return;
+            }
+            e.getChannel().sendFile(file).queue();
         } catch (IOException ignored) {
         }
     }

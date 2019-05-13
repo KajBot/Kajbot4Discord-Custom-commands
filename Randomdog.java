@@ -1,4 +1,3 @@
-import net.dv8tion.jda.core.EmbedBuilder;
 import org.json.JSONObject;
 import support.kajstech.kajbot.command.Command;
 import support.kajstech.kajbot.command.CommandEvent;
@@ -17,6 +16,7 @@ public class Randomdog extends Command {
     public Randomdog() {
         this.name = "doggo";
         this.guildOnly = false;
+        this.requiredRole = ConfigHandler.getProperty("Bot admin role");
     }
 
 
@@ -30,7 +30,12 @@ public class Randomdog extends Command {
             }
             InputStream in = url.openStream();
             Files.copy(in, Paths.get(System.getProperty("user.dir") + "/doggo" + url.toString().substring(lastIndexOf)), StandardCopyOption.REPLACE_EXISTING);
-            e.getChannel().sendFile(new File(System.getProperty("user.dir") + "/doggo" + url.toString().substring(lastIndexOf))).queue();
+            File file = new File(System.getProperty("user.dir") + "/doggo" + url.toString().substring(lastIndexOf));
+            if (((double) file.length() / (1024 * 1024)) > 7.99) {
+                execute(e);
+                return;
+            }
+            e.getChannel().sendFile(file).queue();
         } catch (IOException ignored) {
         }
     }

@@ -38,5 +38,4 @@ public class Randomdog extends Command {
         } catch (IOException ignored) {
         }
     }
-
 }

@@ -17,7 +17,6 @@ public class Randomdog extends Command {
     public Randomdog() {
         this.name = "doggo";
         this.guildOnly = false;
-        this.requiredRole = ConfigHandler.getProperty("Bot admin role");
     }
 
 

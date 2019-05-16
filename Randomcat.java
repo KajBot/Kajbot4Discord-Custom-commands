@@ -1,7 +1,6 @@
 import org.json.JSONObject;
 import support.kajstech.kajbot.command.Command;
 import support.kajstech.kajbot.command.CommandEvent;
-import support.kajstech.kajbot.handlers.ConfigHandler;
 
 import java.io.*;
 import java.net.URL;

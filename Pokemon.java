@@ -3,7 +3,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import support.kajstech.kajbot.command.Command;
 import support.kajstech.kajbot.command.CommandEvent;
-import support.kajstech.kajbot.handlers.ConfigHandler;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -18,7 +17,6 @@ public class Pokemon extends Command {
     public Pokemon() {
         this.name = "pokemon";
         this.guildOnly = false;
-        this.requiredRole = ConfigHandler.getProperty("Bot admin role");
     }
 
 

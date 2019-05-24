@@ -27,8 +27,9 @@ public class Randomcat extends Command {
                 return;
             }
             InputStream in = url.openStream();
-            Files.copy(in, Paths.get(System.getProperty("user.dir") + "/catto" + url.toString().substring(lastIndexOf)), StandardCopyOption.REPLACE_EXISTING);
-            File file = new File(System.getProperty("user.dir") + "/catto" + url.toString().substring(lastIndexOf));
+            if(!Files.exists(Paths.get(System.getProperty("user.dir") + "/downloads"))) Files.createDirectories(Paths.get(System.getProperty("user.dir") + "/downloads"));
+            Files.copy(in, Paths.get(System.getProperty("user.dir") + "/downloads/catto" + url.toString().substring(lastIndexOf)), StandardCopyOption.REPLACE_EXISTING);
+            File file = new File(System.getProperty("user.dir") + "/downloads/catto" + url.toString().substring(lastIndexOf));
             if (((double) file.length() / (1024 * 1024)) > 7.99) {
                 execute(e);
                 return;

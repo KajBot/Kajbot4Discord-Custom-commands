@@ -1,7 +1,7 @@
-import support.kajstech.kajbot.command.Command;
-import support.kajstech.kajbot.command.CommandEvent;
-import support.kajstech.kajbot.utils.Config;
-import support.kajstech.kajbot.utils.LogHelper;
+import dk.jensbot.kajbot4discord.command.Command;
+import dk.jensbot.kajbot4discord.command.CommandEvent;
+import dk.jensbot.kajbot4discord.utils.Config;
+import dk.jensbot.kajbot4discord.utils.LogHelper;
 
 import java.io.IOException;
 import java.net.URL;
@@ -17,7 +17,7 @@ public class Ascii extends Command {
     public Ascii() {
         this.name = "ascii";
         this.guildOnly = true;
-        this.requiredRole = Config.cfg.get("Bot admin role");
+        this.adminCommand = true;
     }
 
     private int randomNum(int start, int end) {

@@ -1,8 +1,8 @@
 import net.dv8tion.jda.core.EmbedBuilder;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import support.kajstech.kajbot.command.Command;
-import support.kajstech.kajbot.command.CommandEvent;
+import dk.jensbot.kajbot4discord.command.Command;
+import dk.jensbot.kajbot4discord.command.CommandEvent;
 
 import java.io.BufferedReader;
 import java.io.IOException;

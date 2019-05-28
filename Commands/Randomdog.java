@@ -1,6 +1,6 @@
 import org.json.JSONObject;
-import support.kajstech.kajbot.command.Command;
-import support.kajstech.kajbot.command.CommandEvent;
+import dk.jensbot.kajbot4discord.command.Command;
+import dk.jensbot.kajbot4discord.command.CommandEvent;
 
 import java.io.*;
 import java.net.URL;

@@ -1,12 +1,12 @@
-import support.kajstech.kajbot.command.Command;
-import support.kajstech.kajbot.command.CommandEvent;
-import support.kajstech.kajbot.utils.Config;
-import support.kajstech.kajbot.utils.LogHelper;
+import dk.jensbot.kajbot4discord.command.Command;
+import dk.jensbot.kajbot4discord.command.CommandEvent;
+import dk.jensbot.kajbot4discord.utils.Config;
+import dk.jensbot.kajbot4discord.utils.LogHelper;
 
 public class Invite extends Command {
     public Invite() {
         this.name = "invite";
-        this.guildOnly = true;
+        this.adminCommand = true;
     }
 
     @Override

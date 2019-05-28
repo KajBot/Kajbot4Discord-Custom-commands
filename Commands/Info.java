@@ -2,9 +2,9 @@ import net.dv8tion.jda.core.EmbedBuilder;
 import net.dv8tion.jda.core.OnlineStatus;
 import net.dv8tion.jda.core.entities.Member;
 import net.dv8tion.jda.core.entities.User;
-import support.kajstech.kajbot.command.Command;
-import support.kajstech.kajbot.command.CommandEvent;
-import support.kajstech.kajbot.utils.Config;
+import dk.jensbot.kajbot4discord.command.Command;
+import dk.jensbot.kajbot4discord.command.CommandEvent;
+import dk.jensbot.kajbot4discord.utils.Config;
 
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
@@ -15,7 +15,7 @@ public class Info extends Command {
     public Info() {
         this.name = "info";
         this.guildOnly = true;
-        this.requiredRole = Config.cfg.get("Bot admin role");
+        this.adminCommand = true;
     }
 
     private static String VariableToString(String regex, String input) {

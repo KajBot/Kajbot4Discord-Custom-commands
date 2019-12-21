@@ -14,7 +14,6 @@ import java.util.stream.Stream;
 public class Randomdog extends Command {
     public Randomdog() {
         this.name = "doggo";
-        this.guildOnly = false;
     }
 
 

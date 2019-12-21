@@ -1,10 +1,9 @@
-import net.dv8tion.jda.core.EmbedBuilder;
-import net.dv8tion.jda.core.OnlineStatus;
-import net.dv8tion.jda.core.entities.Member;
-import net.dv8tion.jda.core.entities.User;
+import net.dv8tion.jda.api.EmbedBuilder;
+import net.dv8tion.jda.api.OnlineStatus;
+import net.dv8tion.jda.api.entities.Member;
+import net.dv8tion.jda.api.entities.User;
 import dk.jensbot.kajbot4discord.command.Command;
 import dk.jensbot.kajbot4discord.command.CommandEvent;
-import dk.jensbot.kajbot4discord.utils.Config;
 
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
@@ -14,8 +13,7 @@ import java.util.Locale;
 public class Info extends Command {
     public Info() {
         this.name = "info";
-        this.guildOnly = true;
-        this.adminCommand = true;
+        this.boosterCommand = true;
     }
 
     private static String VariableToString(String regex, String input) {
@@ -55,11 +53,11 @@ public class Info extends Command {
         /* Status */
         OnlineStatus stat = member == null ? null : member.getOnlineStatus();
         status = stat == null ? "N/A" : VariableToString("_", stat.getKey());
-        game = stat == null ? "N/A" : member.getGame() == null ? "N/A" : member.getGame().getName();
+        game = stat == null ? "N/A" : member.getActivities().get(0) == null ? "N/A" : member.getActivities().get(0).getName();
 
         /* Time */
-        join = member == null ? "N/A" : DateTimeFormatter.ofPattern("d/M/u HH:mm:ss").format(member.getJoinDate());
-        register = DateTimeFormatter.ofPattern("d/M/u HH:mm:ss").format(user.getCreationTime());
+        join = member == null ? "N/A" : DateTimeFormatter.ofPattern("d/M/u HH:mm:ss").format(member.getTimeJoined());
+        register = DateTimeFormatter.ofPattern("d/M/u HH:mm:ss").format(user.getTimeCreated());
 
         /* Final */
         EmbedBuilder embed = new EmbedBuilder().setAuthor(nickname, null, icon).setThumbnail(icon);

@@ -1,6 +1,5 @@
 import dk.jensbot.kajbot4discord.command.Command;
 import dk.jensbot.kajbot4discord.command.CommandEvent;
-import dk.jensbot.kajbot4discord.utils.Config;
 import dk.jensbot.kajbot4discord.utils.LogHelper;
 
 import java.io.IOException;
@@ -16,7 +15,6 @@ public class Ascii extends Command {
 
     public Ascii() {
         this.name = "ascii";
-        this.guildOnly = true;
         this.adminCommand = true;
     }
 

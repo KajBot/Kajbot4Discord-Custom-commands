@@ -1,4 +1,4 @@
-import net.dv8tion.jda.core.EmbedBuilder;
+import net.dv8tion.jda.api.EmbedBuilder;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import dk.jensbot.kajbot4discord.command.Command;
@@ -16,7 +16,6 @@ import java.util.stream.Stream;
 public class Pokemon extends Command {
     public Pokemon() {
         this.name = "pokemon";
-        this.guildOnly = false;
     }
 
 

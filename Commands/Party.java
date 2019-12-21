@@ -1,8 +1,8 @@
-import net.dv8tion.jda.core.EmbedBuilder;
-import org.json.JSONArray;
-import org.json.JSONObject;
 import dk.jensbot.kajbot4discord.command.Command;
 import dk.jensbot.kajbot4discord.command.CommandEvent;
+import net.dv8tion.jda.api.EmbedBuilder;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -18,7 +18,6 @@ public class Party extends Command {
         this.name = "party";
         this.boosterCommand = true;
     }
-
 
     @Override
     public void execute(CommandEvent e) {

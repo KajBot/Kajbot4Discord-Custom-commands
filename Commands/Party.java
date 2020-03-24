@@ -16,7 +16,7 @@ import java.util.stream.Stream;
 public class Party extends Command {
     public Party() {
         this.name = "party";
-        this.boosterCommand = true;
+        this.boosterCommand = false;
     }
 
     @Override

@@ -5,7 +5,7 @@ import net.dv8tion.jda.api.EmbedBuilder;
 public class Letters extends Command {
     public Letters() {
         this.name = "letters";
-        this.boosterCommand = true;
+        this.boosterCommand = false;
     }
 
     @Override

@@ -13,7 +13,7 @@ import java.util.Locale;
 public class Info extends Command {
     public Info() {
         this.name = "info";
-        this.boosterCommand = true;
+        this.boosterCommand = false;
     }
 
     private static String VariableToString(String regex, String input) {

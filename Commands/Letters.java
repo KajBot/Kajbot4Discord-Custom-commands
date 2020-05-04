@@ -5,7 +5,6 @@ import net.dv8tion.jda.api.EmbedBuilder;
 public class Letters extends Command {
     public Letters() {
         this.name = "letters";
-        this.boosterCommand = false;
     }
 
     @Override
@@ -20,7 +19,7 @@ public class Letters extends Command {
                 eb.addBlankField(true);
                 eb.addBlankField(false);
             } else {
-                eb.setImage("http://dance.cavifax.com/images/" + l + ".gif");
+              eb.setImage("http://dance.cavifax.com/images/" + l.toLowerCase() + ".gif");
             }
             e.reply(eb.build());
         }
